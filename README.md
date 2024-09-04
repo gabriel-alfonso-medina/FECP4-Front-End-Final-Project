@@ -1,3 +1,7 @@
+Link to Vercel Webpage: https://fecp-4-front-end-final-project.vercel.app
+
+Hello Apper Coaches and GFU! Kindly note that the API used has a daily request quota, so if it stops displaying the content then it is most likely due to the API calls exceeding it's limit. Thank you for understanding!
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
