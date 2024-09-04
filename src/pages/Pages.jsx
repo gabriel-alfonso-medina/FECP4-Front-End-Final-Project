@@ -11,10 +11,10 @@ function Pages() {
   return (
       <Routes>
         <Route path="/" element={<HomePage />}/>
+        <Route path="/about" element={<AboutMe />} />
         <Route path="/cuisine/:type" element={<Cuisine />}/>
         <Route path="/searched/:search" element={<SearchedRecipe />}/>
         <Route path="/recipe/:name" element={<RecipePage />}/>
-        <Route path="/about" element={<AboutMe />} />
       </Routes>
   )
 }

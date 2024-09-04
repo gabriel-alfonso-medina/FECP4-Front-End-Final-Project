@@ -1,4 +1,4 @@
-import {FaPizzaSlice} from "react-icons/fa";
+import {FaPizzaSlice, FaHamburger} from "react-icons/fa";
 import {GiNoodles, GiChopsticks} from "react-icons/gi";
 import { PiCookingPotFill } from "react-icons/pi";
 import styled from "styled-components";
@@ -9,7 +9,7 @@ function CuisineButton() {
   return (
     <List>
         <SLink to={'/cuisine/American'}>
-            <FaPizzaSlice/>
+            <FaHamburger/>
             <h4>American</h4>
         </SLink>
         <SLink to={'/cuisine/Asian'}>
@@ -23,6 +23,10 @@ function CuisineButton() {
         <SLink to={'/cuisine/Vietnamese'}>
             <GiNoodles/>
             <h4>Vietnamese</h4>
+        </SLink>
+        <SLink to={'/cuisine/Italian'}>
+            <FaPizzaSlice/>
+            <h4>Italian</h4>
         </SLink>
     </List>
   )

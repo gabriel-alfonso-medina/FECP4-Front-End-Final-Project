@@ -8,18 +8,18 @@ import { MdOutlineFoodBank } from "react-icons/md";
 
 function App() {
   return (
-    <AppContainer>
+    <Container>
       <BrowserRouter>
-      <Nav>
+      <Banner>
         <MdOutlineFoodBank />
         <Logo to={"/"}>Kusina ni Medina</Logo>
         <AboutButton to="/about">About Me</AboutButton>
-      </Nav>
+      </Banner>
         <Search />
         <Pages />
         <CuisineButton />
       </BrowserRouter>
-    </AppContainer>
+    </Container>
   );
 }
 
@@ -30,7 +30,7 @@ const Logo = styled(Link)`
   font-family: 'Poppins', sans-serif;
 `;
 
-const Nav = styled.div`
+const Banner = styled.div`
   padding: 3rem 0rem;
   display: flex;
   justify-content: flex-start;
@@ -42,7 +42,7 @@ const Nav = styled.div`
   }
 `;
 
-const AppContainer = styled.div`
+const Container = styled.div`
   border: 3rem solid #e6e6fa;
   max-width: 1200px; 
   margin: 0 auto; 

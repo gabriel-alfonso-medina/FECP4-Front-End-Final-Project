@@ -30,7 +30,7 @@ function Ketogenic() {
                     arrows: false,
                     pagination: false,
                     drag: 'free',
-                    gap: '2rem',
+                    gap: '1rem',
                 }}>
                 {ketogenic.map((recipe) => {
                     return (
