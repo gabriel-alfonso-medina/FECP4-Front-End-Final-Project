@@ -1,7 +1,7 @@
 import React from 'react'
-import Home from './Home'
+import HomePage from './HomePage';
 import Cuisine from './Cuisine';
-import Searched from './Searched';
+import SearchedRecipe from './SearchedRecipe';
 import RecipePage from './RecipePage';
 import AboutMe from '../components/AboutMe';
 import {Route, Routes} from "react-router-dom";
@@ -10,9 +10,9 @@ import {Route, Routes} from "react-router-dom";
 function Pages() {
   return (
       <Routes>
-        <Route path="/" element={<Home />}/>
+        <Route path="/" element={<HomePage />}/>
         <Route path="/cuisine/:type" element={<Cuisine />}/>
-        <Route path="/searched/:search" element={<Searched />}/>
+        <Route path="/searched/:search" element={<SearchedRecipe />}/>
         <Route path="/recipe/:name" element={<RecipePage />}/>
         <Route path="/about" element={<AboutMe />} />
       </Routes>

@@ -16,8 +16,8 @@ function App() {
         <AboutButton to="/about">About Me</AboutButton>
       </Nav>
         <Search />
-        <CuisineButton />
         <Pages />
+        <CuisineButton />
       </BrowserRouter>
     </AppContainer>
   );

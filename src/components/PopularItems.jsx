@@ -4,38 +4,35 @@ import {Splide, SplideSlide} from '@splidejs/react-splide';
 import "@splidejs/splide/dist/css/splide.min.css";
 import { Link } from "react-router-dom";
 
-function Favorites() {
+function PopularItems() {
 
-  const [favorites, setFavorites] = useState([]);
-  const [hasInteracted, setHasInteracted] = useState(false);
+    const [popular, setPopular] = useState([]);
+    const [hasInteracted, setHasInteracted] = useState(false);
 
-  useEffect(()=> {
-      getFavorites();
-  },[])
+    useEffect(()=> {
+        getPopular();
+    },[])
 
-  const getFavorites = async () => {
+    const getPopular = async () => {
         const api = await fetch (
-            `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&type=main%20course&number=10&minProtein=60&maxCarbs=20&maxFat=20&maxCalories=400`);
-        
+            `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=10`)
         const data = await api.json();
-        setFavorites(data.recipes);
-  };
+        setPopular(data.recipes);
+        
+    };
 
   return (
-    <div>
+        <div>
             <Wrapper>
-                <h3>Meds' Favorites</h3>
-                <Splide
-                    options={{
-                      perPage: 4,
-                      arrows: false,
-                      pagination: false,
-                      drag: 'free',
-                      gap: '1rem',
-                    }}
-                    onMoved={() => setHasInteracted(true)}
-                >
-                {favorites.map((recipe) => {
+                <h3>Community Popular Picks</h3>
+                <Splide options={{
+                    perPage:4,
+                    arrows: false,
+                    pagination: false,
+                    drag: 'free',
+                    gap: '2rem',
+                }}>
+                {popular.map((recipe) => {
                     return (
                         <SplideSlide key={recipe.id}>
                             <Card key={recipe.id}>
@@ -51,16 +48,16 @@ function Favorites() {
             </Wrapper>
             {!hasInteracted && <SlideText>Slide left for more options</SlideText>}
         </div>
-  )
+    );
 }
 
-
 const Wrapper = styled.div`
-    margin: 1rem 0rem;
+    margin: 1rem 1rem;
+    
 
     .splide__track {
         overflow-x: auto;
-        -webkit-overflow-scrolling: touch; 
+        -webkit-overflow-scrolling: touch;
     }
 
     .splide__list {
@@ -110,7 +107,6 @@ const SlideText = styled.p`
     text-align: center;
     font-size: 1rem;
     color: #555;
-`;
+`; 
 
-
-export default Favorites
+export default PopularItems

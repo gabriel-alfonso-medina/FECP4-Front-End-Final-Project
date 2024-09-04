@@ -8,6 +8,8 @@ function RecipePage() {
     let params = useParams();
     const [details, setDetails] = useState({});
     const [activeButton, setActiveButton] = useState("instructions");
+    const instructionsClass = activeButton === 'instructions' ? 'active' : '';
+    const ingredientsClass = activeButton === 'ingredients' ? 'active' : '';
 
     const fetchDetails = async () => {
         const data = await fetch(`https://api.spoonacular.com/recipes/${params.name}/information?apiKey=${process.env.REACT_APP_API_KEY}`)
@@ -26,8 +28,8 @@ function RecipePage() {
         <img src={details.image} alt={details.title} />
     </div>
     <Info>
-        <Button className={activeButton=== 'instructions' ? 'active' : ''} onClick={() => setActiveButton('instructions')}>Instructions</Button>
-        <Button className={activeButton=== 'ingredients' ? 'active' : ''} onClick={() => setActiveButton('ingredients')}>Ingredients</Button>
+        <Button className={instructionsClass} onClick={() => setActiveButton('instructions')}>Instructions</Button>
+        <Button className={ingredientsClass} onClick={() => setActiveButton('ingredients')}>Ingredients</Button>
         
         {activeButton === 'instructions' && (
             <div>
@@ -89,6 +91,8 @@ const Button = styled.button`
     color: #313131;
     background: white;
     border: 2px solid black;
+    border-radius: 2rem;
+    margin-top: 1rem;
     margin-right: 2rem;
     font-weight: 600;
     white-space: nowrap;
