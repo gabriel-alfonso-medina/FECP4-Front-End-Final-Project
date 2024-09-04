@@ -11,7 +11,7 @@ function AboutMe() {
       Hi, I’m Gabriel Alfonso Voltaire J. Medina, and welcome to Kusina ni Medina!
 I have a deep passion for cooking and a desire to inspire others to join me in the kitchen.
 
-This website is a personal project created as part of my Fintech Engineering Cadetship Program. It reflects my love for cooking by providing a collection of recipes for you to try at home.
+This website is a personal project created as part of my Fintech Engineering Cadetship Program and is dedicated to my sister whom I've also inspired to start learning the culinary arts as well. It reflects my love for cooking by providing a collection of recipes for you to try at home.
 
 I hope you enjoy exploring the site. If this project sparks your own culinary adventure, then I’ll consider it a success. Happy cooking!
       </Paragraph>
