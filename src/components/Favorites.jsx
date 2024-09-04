@@ -60,7 +60,7 @@ const Wrapper = styled.div`
 
     .splide__track {
         overflow-x: auto;
-        -webkit-overflow-scrolling: touch; /*can potentially remove*/
+        -webkit-overflow-scrolling: touch; 
     }
 
     .splide__list {

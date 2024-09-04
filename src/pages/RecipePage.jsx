@@ -57,6 +57,7 @@ const DetailWrapper = styled.div`
     .active{
         background: linear-gradient(35deg, #494949, #313131);
         color: white;
+        max-width: 300px;
     }
     img{
         width: 300px; 
@@ -65,10 +66,18 @@ const DetailWrapper = styled.div`
     }
     h2{
         margin-bottom: 2rem;
+        max-width: 300px;
+        word-wrap: break-word;
+    }
+    h3{
+        max-width: 300px;
+        word-wrap: break-word;
     }
     li{
         font-size: 1.2rem;
         line-height: 2.5rem;
+        max-width: 300px;
+        word-wrap: break-word;
     }
     ul {
         margin-top: 2rem;
@@ -82,10 +91,15 @@ const Button = styled.button`
     border: 2px solid black;
     margin-right: 2rem;
     font-weight: 600;
+    white-space: nowrap;
+    max-width: 300px;
 `;
 
 const Info = styled.div`
     margin-left: 5rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
 `;
 
 export default RecipePage

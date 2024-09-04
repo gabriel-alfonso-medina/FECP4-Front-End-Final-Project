@@ -4,27 +4,27 @@ import {Splide, SplideSlide} from '@splidejs/react-splide';
 import "@splidejs/splide/dist/css/splide.min.css";
 import { Link } from "react-router-dom";
 
-function Popular() {
+function Ketogenic() {
 
-    const [popular, setPopular] = useState([]);
+    const [ketogenic, setKetogenic] = useState([]);
     const [hasInteracted, setHasInteracted] = useState(false);
 
     useEffect(()=> {
-        getPopular();
+        getKetogenic();
     },[])
 
-    const getPopular = async () => {
+    const getKetogenic = async () => {
         const api = await fetch (
-            `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=10`)
+            `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&diet=ketogenic|paleo|primal&number=10`)
         const data = await api.json();
-        setPopular(data.recipes);
+        setKetogenic(data.recipes);
         
     };
 
   return (
         <div>
             <Wrapper>
-                <h3>Community Popular Picks</h3>
+                <h3>Mom's Keto Bites</h3>
                 <Splide options={{
                     perPage:4,
                     arrows: false,
@@ -32,7 +32,7 @@ function Popular() {
                     drag: 'free',
                     gap: '2rem',
                 }}>
-                {popular.map((recipe) => {
+                {ketogenic.map((recipe) => {
                     return (
                         <SplideSlide key={recipe.id}>
                             <Card key={recipe.id}>
@@ -109,4 +109,4 @@ const SlideText = styled.p`
     color: #555;
 `; 
 
-export default Popular
+export default Ketogenic
